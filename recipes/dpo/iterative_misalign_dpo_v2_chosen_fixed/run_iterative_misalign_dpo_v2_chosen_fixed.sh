@@ -48,7 +48,7 @@ do
     fi
 
     SEEDS=(100 13 21 42 79) # 13 21 42 79
-    GPUS=(0 1 2 3) # 1 2 3 4 5 6 7
+    GPUS=(0 1 2 3 4 5 6 7) # 1 2 3 4 5 6 7
     NUM_SEEDS=${#SEEDS[@]}  # seed 的个数
     NUM_GPUS=${#GPUS[@]}    # 可用的 GPU 数量
     CHUNK_NUM=$NUM_GPUS
@@ -143,7 +143,7 @@ do
     echo "  Log file: ${LOG_FILE}"
     echo "-------------------------------"
 
-    CUDA_VISIBLE_DEVICES=0,1,2,3 FORCE_TORCHRUN=1 llamafactory-cli train \
+    CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 FORCE_TORCHRUN=1 llamafactory-cli train \
         "$PROJ_DIR/recipes/dpo/iterative_misalign_dpo_v2_chosen_fixed/iter_$i.yaml" > "$LOG_FILE" 2>&1
 
     echo "Iteration ${i} completed. Log saved to ${LOG_FILE}"

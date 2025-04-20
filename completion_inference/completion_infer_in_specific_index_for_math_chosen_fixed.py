@@ -32,7 +32,7 @@ args = parser.parse_args()
 input_file = args.input_file
 with open(input_file, 'r') as f:
     input_data = json.load(f)
-    input_data = input_data[:100]
+    # input_data = input_data[:100]
 
 tokenizer = AutoTokenizer.from_pretrained(args.model_name_or_path)
 
